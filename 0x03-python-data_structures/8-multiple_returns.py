@@ -1,5 +1,7 @@
 def multiple_returns(sentence):
     if not sentence:
-        sentence[0] = None
-    t = len(sentence), sentence[0]
+        first_char = None
+    else:
+        first_char = sentence[0]
+    t = len(sentence), first_char
     return t
