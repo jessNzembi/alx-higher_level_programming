@@ -1,0 +1,38 @@
+The "5-text_indentation" module
+===============================
+
+using text_indentation
+----------------------
+
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+	>>> m = __import__("5-text_indentation").__doc__
+	>>> len(m) > 1
+	True
+
+	>>> f = __import__("5-text_indentation").text_indentation.__doc__
+	>>> len(f) > 1
+	True
+	>>> text_indentation("Should I add eggs to the list? It contains: milk.meat.\n")
+	Should I add eggs to the list?
+	<BLANKLINE>
+	It contains:
+	<BLANKLINE>
+	milk.
+	<BLANKLINE>
+	meat.
+	<BLANKLINE>
+	<BLANKLINE>
+	>>> text_indentation(5.03)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+	>>> text_indentation("hello")
+	hello
+	>>> text_indentation()
+	Traceback (most recent call last):
+	...
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
+	>>> text_indentation("hello", " there.")
+	Traceback (most recent call last):
+	...
+	TypeError: text_indentation() takes 1 positional argument but 2 were given
