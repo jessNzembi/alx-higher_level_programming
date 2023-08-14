@@ -1,4 +1,4 @@
-The ``BaseGeometry`` class module
+The "BaseGeometry" class module
 =================================
 
 using BaseGeometry class
