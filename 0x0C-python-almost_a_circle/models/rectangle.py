@@ -80,12 +80,8 @@ class Rectangle(Base):
         for i in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
 
-    def __str__(self):
-        """string representation"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(
-                self.id, self.x, self.y, self.width, self.height)
-
     def update(self, *args, **kwargs):
+        """updates attributes"""
         if args:
             attr_list = ["id", "width", "height", "x", "y"]
             for i, arg in enumerate(args):
@@ -93,3 +89,13 @@ class Rectangle(Base):
         elif kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """returns dictionary representstion of a Rectangle"""
+        return {"id": self.id, "width": self.width, "height": self.height,
+                "x": self.x, "y": self.y}
+
+    def __str__(self):
+        """string representation"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+                self.id, self.x, self.y, self.width, self.height)
