@@ -7,9 +7,9 @@ import sys
 
 def main():
     """ main function"""
-    url = sys.argv[1]
+    url = str(sys.argv[1])
     r = requests.get(url)
-    content = r.headers['X-Request-Id']
+    content = r.headers.get('X-Request-Id')
     print(content)
 
 
