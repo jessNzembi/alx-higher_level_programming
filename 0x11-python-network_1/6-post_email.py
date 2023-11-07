@@ -10,7 +10,7 @@ def main():
     url = str(sys.argv[1])
     email = str(sys.argv[2])
     r = requests.post(url, data={'email': email})
-    print(r.text['email'])
+    print(r.text)
 
 
 if __name__ == "__main__":
